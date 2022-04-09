@@ -17,4 +17,4 @@ python-editor==1.0.4
 six==1.16.0
 SQLAlchemy==1.4.18
 Werkzeug==2.0.1
-Jose==1.0.0
+Jose
