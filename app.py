@@ -38,12 +38,11 @@ def create_app(test_config=None):
 
     @app.route('/')
     def index_endpoint():
-        print("For Udacity Capstone Project: "
-              "please loin to https://dev-v6hy9z2c.us.auth0.com/authorize?audience=DZproject&response_type=token&client_id=RtaesOMPljkhXk3JZvKCymuoWGl5lJxz&redirect_uri=http://localhost:8080/login-results ")
-        print("Customer login: customer1@email.com; password: customer1@email.com")
-        print("Dentist login:  dentist1@email.com; password: dentist1@email.com")
-        print("Clinic Owner login: clinicowner@email.com; password: ClinicOwner@email.com")
-
+        return "For Udacity Capstone Project: " \
+               "please loin to https://dev-v6hy9z2c.us.auth0.com/authorize?audience=DZproject&response_type=token&client_id=RtaesOMPljkhXk3JZvKCymuoWGl5lJxz&redirect_uri=http://localhost:8080/login-results " \
+               " | Customer login: customer1@email.com; password: customer1@email.com" \
+               " | Dentist login:  dentist1@email.com; password: dentist1@email.com" \
+               " | Clinic Owner login: clinicowner@email.com; password: ClinicOwner@email.com"
 
 # ROUTES : GET
     '''
