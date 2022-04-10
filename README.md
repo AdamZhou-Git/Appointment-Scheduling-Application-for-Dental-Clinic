@@ -1,16 +1,10 @@
-#Appointment Scheduling Application for Dental Clinic
-
 ## About
 
 This is an appointment scheduling and customer management application that allows you to create a public-facing booking page for Dental Clinic. 
 The application is designed to include 3 roles, which are customers, owner and dentists. Each role has a set of role-based access controls (RBAC)
 to ensure the professional and efficient communications. 
 
-This Application does not have a frontend implemented. It is a server only application at the moment.
-
-
-##Motivation
-Simplify and streamline the daily booking process with the skill set of Flask, SQLAlchemy, PostgreSQL, Postman, Auth0, gunicorn and RESTful API deployment on Heroku. 
+This Application does not have a frontend implemented. It is a server only application at the moment. 
 
 ## Application Heroku link:
 
@@ -29,7 +23,7 @@ Role | Email | Password
 | Clinic Owner | clinicowner@email.com      |    ClinicOwner@email.com |
 
 
-##Application Stack
+## Application Stack
 
 ### Tech Stack:
 * Python3: The server language
@@ -39,7 +33,7 @@ Role | Email | Password
 * Heroku: Application Deployment Platform
 * Postman: Testing the application API endpoints
 
-###Dependencies/Libraries
+### Dependencies/Libraries
 The full list of dependencies can be found in the requirement.txt. Some major dependencies are:
 * alembic
 * Flask
@@ -58,7 +52,7 @@ The full list of dependencies can be found in the requirement.txt. Some major de
 
 1. Clone the project repository
 ```
-git clone https://github.com/AdamZhou-Git/Appointment_Scheduling_Application
+git clone https://github.com/AdamZhou-Git/Appointment-Scheduling-Application-for-Dental-Clinic
 ```
 2. Create a virtual environment
 ```
@@ -98,7 +92,7 @@ export FLASK_ENV=development
 flask run
 ```
 
-##Deploy the App on Heroku
+## Deploy the App on Heroku
 1. Prerequisite: check your heroku and postgres version and login to heroku
 ```angular2html
 postgres --version
@@ -414,7 +408,7 @@ The testing of all endpoints was implemented with unittest. Each endpoint can be
 
 All test cases are sorted in test_app.py file in the project root folder.
 
-###Steps for testing
+### Steps for testing
 
 1. create a test database using Psql CLI:
 ```angular2html
