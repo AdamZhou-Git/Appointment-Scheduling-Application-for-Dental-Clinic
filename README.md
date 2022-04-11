@@ -62,9 +62,9 @@ source env/bin/activate # for MacOs
 ```
 3. Set up the environment variables
 ```
-python3 -m venv myvenv
-source env/Scripts/activate # for windows
-source env/bin/activate # for MacOs
+chmod +x setup.sh
+source setup.sh
+echo $DATABASE_URL
 ```
 4. Install dependencies
 ```
@@ -80,12 +80,7 @@ dropdb dbname
 ```angular2html
 psql dbname < dental.psql
 ```
-7. Set up the environment variables
-```
-chmod +x setup.sh
-source setup.sh
-```
-8. Run the application
+7. Run the application
 ```angular2html
 export FLASK_APP=app.py
 export FLASK_ENV=development
