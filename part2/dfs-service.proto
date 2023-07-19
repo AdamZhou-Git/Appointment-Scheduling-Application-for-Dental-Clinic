@@ -1,0 +1,78 @@
+syntax = "proto3";
+
+package dfs_service;
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/empty.proto";
+
+service DFSService {
+
+    // Add your service calls here
+
+    // 1. REQUIRED (Parts 1 & 2): A method to store files on the server
+    rpc Store(stream FilePacket) returns (StoreResponse) {}
+
+    // 2. REQUIRED (Parts 1 & 2): A method to fetch files from the server
+    rpc Fetch(FileName) returns (stream FilePacket) {}
+
+    // 3. REQUIRED (Parts 1 & 2): A method to list all files on the server
+    rpc ListAll(google.protobuf.Empty) returns (FileInfos) {}
+
+    // 4. REQUIRED (Parts 1 & 2): A method to get the status of a file on the server
+    rpc GetFileInfo(FileName) returns (FileInfo) {}
+
+    // 5. REQUIRED (Part 2 only): A method to request a write lock from the server
+    rpc RequestWriteLock (WriteLockRequest) returns (WriteLockResponse);
+
+    // 6. REQUIRED (Part 2 only): A method named CallbackList to handle asynchronous file listing requests
+    //                            from a client. This method should return a listing of files along with their
+    //                            attribute information. The expected attribute information should include name,
+    //                            size, modified time, and creation time.
+    rpc CallbackList(FileName) returns (FileInfos) {}
+
+    // 7. REQUIRED (Part 2 only): A method to delete a file from the server
+    rpc Delete(FileName) returns (DeleteReponse) {}
+
+    // 8. Any other methods you deem necessary to complete the tasks of this assignment
+
+
+}
+
+// Add your message types here
+message FilePacket{
+    bytes packet = 1;
+}
+
+message StoreResponse{
+    bool isSuccessful = 1;
+}
+
+message FileName{
+    string name = 1;
+}
+
+message DeleteReponse{
+    bool isSuccessful = 1;
+}
+
+message FileInfos{
+    repeated FileInfo infos = 1;
+}
+
+message FileInfo{
+    string name = 1;
+    int32 size = 2;
+    uint32 checkSum = 5;
+    google.protobuf.Timestamp lastModified = 3;
+    google.protobuf.Timestamp created = 4;
+}
+
+message WriteLockRequest{
+    string clientID = 1;
+    string name = 2;
+}
+
+message WriteLockResponse{
+    bool isLocked = 1;
+}
+
